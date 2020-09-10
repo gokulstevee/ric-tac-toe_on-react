@@ -22,6 +22,21 @@ function App() {
     SetWinMessage("");
   };
 
+  const changeItem = (itemNumber) => {
+    if (winMessage) {
+      return toast(winMessage, { type: "success" });
+    }
+    if (itemArray[itemNumber] === "empty") {
+      itemArray[itemNumber] = iscross ? "cross" : "circle";
+      setIsCross(!iscross);
+    } else {
+      return toast(itemArray[itemNumber] + ",Already filled", {
+        type: "error",
+      });
+    }
+    checkIsTie();
+    checkIsWinner();
+  };
 
   return (
     <Container className="p-5">
