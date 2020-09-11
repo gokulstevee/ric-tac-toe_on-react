@@ -22,6 +22,15 @@ function App() {
     SetWinMessage("");
   };
 
+  const check = (ele) => {
+    return ele !== "empty";
+  };
+  const checkIsTie = () => {
+    if (itemArray.every(check)) {
+      return toast(`Game Tie`, { type: "warning" });
+    }
+  };
+
   const changeItem = (itemNumber) => {
     if (winMessage) {
       return toast(winMessage, { type: "success" });
