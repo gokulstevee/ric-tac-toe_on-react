@@ -31,6 +31,66 @@ function App() {
     }
   };
 
+  const checkIsWinner = () => {
+    if (
+      itemArray[0] === itemArray[1] &&
+      itemArray[1] === itemArray[2] &&
+      itemArray[0] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[0]} won`);
+      toast(`${itemArray[0]} won`, { type: "success" });
+    } else if (
+      itemArray[3] === itemArray[4] &&
+      itemArray[4] === itemArray[5] &&
+      itemArray[3] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[3]} won`);
+      toast(`${itemArray[3]} won`, { type: "success" });
+    } else if (
+      itemArray[6] === itemArray[7] &&
+      itemArray[7] === itemArray[8] &&
+      itemArray[6] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[6]} won`);
+      toast(`${itemArray[6]} won`, { type: "success" });
+    } else if (
+      itemArray[0] === itemArray[3] &&
+      itemArray[3] === itemArray[6] &&
+      itemArray[0] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[0]} won`);
+      toast(`${itemArray[0]} won`, { type: "success" });
+    } else if (
+      itemArray[1] === itemArray[4] &&
+      itemArray[4] === itemArray[7] &&
+      itemArray[1] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[1]} won`);
+      toast(`${itemArray[1]} won`, { type: "success" });
+    } else if (
+      itemArray[2] === itemArray[5] &&
+      itemArray[5] === itemArray[8] &&
+      itemArray[2] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[2]} won`);
+      toast(`${itemArray[2]} won`, { type: "success" });
+    } else if (
+      itemArray[0] === itemArray[4] &&
+      itemArray[4] === itemArray[8] &&
+      itemArray[0] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[0]} won`);
+      toast(`${itemArray[0]} won`, { type: "success" });
+    } else if (
+      itemArray[2] === itemArray[4] &&
+      itemArray[4] === itemArray[6] &&
+      itemArray[2] !== "empty"
+    ) {
+      SetWinMessage(`${itemArray[2]} won`);
+      toast(`${itemArray[2]} won`, { type: "success" });
+    }
+  };
+
   const changeItem = (itemNumber) => {
     if (winMessage) {
       return toast(winMessage, { type: "success" });
