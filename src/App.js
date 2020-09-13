@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import Icon from "./components/icon";
 
 import { Container, Col, Row, Card, CardBody, Button } from "reactstrap";
@@ -88,6 +87,8 @@ function App() {
     ) {
       SetWinMessage(`${itemArray[2]} won`);
       toast(`${itemArray[2]} won`, { type: "success" });
+    } else {
+      checkIsTie();
     }
   };
 
@@ -103,7 +104,7 @@ function App() {
         type: "error",
       });
     }
-    checkIsTie();
+
     checkIsWinner();
   };
 
